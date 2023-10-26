@@ -44,6 +44,11 @@ class _CardsVIew extends StatelessWidget {
               _CardType1(label: card['label'], elevation: card['elevation'])),
           ...cards.map((card) =>
               _CardType2(label: card['label'], elevation: card['elevation'])),
+          ...cards.map((card) =>
+              _CardType3(label: card['label'], elevation: card['elevation'])),
+          const SizedBox(
+            height: 30,
+          )
         ],
       ),
     );
@@ -105,6 +110,37 @@ class _CardType2 extends StatelessWidget {
           Align(
             alignment: Alignment.bottomLeft,
             child: Text('$label - outline'),
+          )
+        ]),
+      ),
+    );
+  }
+}
+
+class _CardType3 extends StatelessWidget {
+  final String label;
+  final double elevation;
+
+  const _CardType3({required this.label, required this.elevation});
+
+  @override
+  Widget build(BuildContext context) {
+    final colors = Theme.of(context).colorScheme;
+    return Card(
+      color: colors.surfaceVariant,
+      elevation: elevation,
+      child: Padding(
+        padding: const EdgeInsets.fromLTRB(10, 5, 10, 10),
+        child: Column(children: [
+          Align(
+              alignment: Alignment.topRight,
+              child: IconButton(
+                icon: const Icon(Icons.more_vert_outlined),
+                onPressed: () {},
+              )),
+          Align(
+            alignment: Alignment.bottomLeft,
+            child: Text('$label - filled'),
           )
         ]),
       ),
