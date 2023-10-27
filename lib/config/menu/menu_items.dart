@@ -39,4 +39,9 @@ const appMenuItems = <MenuItem>[
       subTitle: 'Satatefull widget animado',
       link: '/animated',
       icon: Icons.animation),
+  MenuItem(
+      title: 'UI Controls',
+      subTitle: 'Controladores de Flutter',
+      link: '/ui-controls',
+      icon: Icons.control_camera_rounded),
 ];

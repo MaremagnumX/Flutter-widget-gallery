@@ -14,7 +14,7 @@ class _AnimatedScreenState extends State<AnimatedScreen> {
   double width = 120;
   double height = 120;
   double borderRadius = 10.0;
-  Color color = const Color.fromARGB(255, 152, 34, 200);
+  Color color = const Color.fromARGB(255, 103, 58, 183);
 
   changeShape() {
     final random = Random();
