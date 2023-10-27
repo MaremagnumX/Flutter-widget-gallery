@@ -1,3 +1,4 @@
+import 'dart:math';
 import 'package:flutter/material.dart';
 
 class AnimatedScreen extends StatefulWidget {
@@ -10,10 +11,25 @@ class AnimatedScreen extends StatefulWidget {
 }
 
 class _AnimatedScreenState extends State<AnimatedScreen> {
+  double width = 120;
+  double height = 120;
+  double borderRadius = 10.0;
   Color color = const Color.fromARGB(255, 152, 34, 200);
+
+  changeShape() {
+    final random = Random();
+
+    width = random.nextInt(300) + 50;
+    height = random.nextInt(300) + 50;
+    borderRadius = random.nextInt(100) + 20;
+    color = Color.fromARGB(random.nextInt(255) + 200, random.nextInt(255),
+        random.nextInt(255), random.nextInt(255));
+    setState(() {});
+  }
+
   @override
   Widget build(BuildContext context) {
-    const duration = Duration(milliseconds: 400);
+    const duration = Duration(milliseconds: 500);
     final colors = Theme.of(context).colorScheme;
     return Scaffold(
       appBar: AppBar(
@@ -24,19 +40,20 @@ class _AnimatedScreenState extends State<AnimatedScreen> {
       ),
       body: Center(
         child: AnimatedContainer(
-          curve: Curves.easeInOutCubic,
-          width: 200,
-          height: 500,
+          curve: Curves.elasticInOut,
+          width: width <= 0 ? 0 : width,
+          height: height <= 0 ? 0 : height,
           decoration: BoxDecoration(
-              color: color, borderRadius: BorderRadius.circular(20)),
+            color: color,
+            borderRadius:
+                BorderRadius.circular(borderRadius <= 0 ? 0 : borderRadius),
+          ),
           duration: duration,
         ),
       ),
       floatingActionButton: FloatingActionButton(
         onPressed: () {
-          setState(() {
-            color = const Color.fromARGB(255, 216, 204, 40);
-          });
+          changeShape();
         },
         child: const Icon(Icons.play_arrow_rounded),
       ),
