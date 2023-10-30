@@ -10,13 +10,16 @@ class HomeScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final colors = Theme.of(context).colorScheme;
     final scaffoldKey = GlobalKey<ScaffoldState>();
     return Scaffold(
       key: scaffoldKey,
       appBar: AppBar(
         title: const Text('Flutter + Material 3'),
         titleTextStyle: TextStyle(
-            color: Theme.of(context).colorScheme.onSecondary, fontSize: 22),
+            color: colors.onSecondary,
+            fontSize: 22,
+            fontWeight: FontWeight.w500),
         backgroundColor: Theme.of(context).colorScheme.primary,
         iconTheme: const IconThemeData(color: Colors.white),
       ),

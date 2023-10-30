@@ -48,17 +48,23 @@ const appMenuItems = <MenuItem>[
       title: 'UI Controls',
       subTitle: 'Controladores de Flutter',
       link: '/ui-controls',
-      icon: Icons.control_camera_rounded),
+      icon: Icons.control_camera_outlined),
   MenuItem(
     title: 'Introducción a la aplicación',
     subTitle: 'Pequeño tutorial introductorio',
     link: '/tutorial',
-    icon: Icons.signpost_rounded,
+    icon: Icons.signpost_outlined,
   ),
   MenuItem(
     title: 'Inifinite Scroll & Pull',
     subTitle: 'Listas infinitas y pull to refresh',
     link: '/infinite',
-    icon: Icons.list_alt_rounded,
+    icon: Icons.list_alt_outlined,
+  ),
+  MenuItem(
+    title: 'Change theme',
+    subTitle: 'Personaliza tu app a tu gusto',
+    link: '/theme-changer',
+    icon: Icons.color_lens_outlined,
   ),
 ];

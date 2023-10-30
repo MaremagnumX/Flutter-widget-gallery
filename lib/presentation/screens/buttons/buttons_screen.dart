@@ -73,7 +73,7 @@ class _ButtonsView extends StatelessWidget {
               icon: const Icon(Icons.delivery_dining_outlined),
               style: ButtonStyle(
                   backgroundColor: MaterialStatePropertyAll(colors.primary),
-                  iconColor: const MaterialStatePropertyAll(Colors.white))),
+                  iconColor: MaterialStatePropertyAll(colors.background))),
           const CustomButton(),
         ]),
       ),
@@ -93,11 +93,11 @@ class CustomButton extends StatelessWidget {
         color: colors.primary,
         child: InkWell(
           onTap: () {},
-          child: const Padding(
-            padding: EdgeInsets.symmetric(horizontal: 20, vertical: 10),
+          child: Padding(
+            padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 10),
             child: Text(
               'Mi botón',
-              style: TextStyle(color: Colors.white),
+              style: TextStyle(color: colors.background),
             ),
           ),
         ),
